@@ -95,8 +95,19 @@ button:hover {
 
 
 /* Form Styles */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 20%;
+    margin: 20px;
+    gap: 10px;
+}
+
 .form-container {
-    display: contents;
+    display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
@@ -108,10 +119,10 @@ button:hover {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    margin: 10px;
     border-radius: 10px;
     border: 1px solid #418043;
     font-size: 16px;
+    
 }
 
 /* Navbar Styles */
@@ -129,6 +140,7 @@ button:hover {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+    padding: 0% 10%;
 }
 
 .nav-item {
@@ -167,6 +179,11 @@ button:hover {
 
 /* Sidebar styles and responsive adjustments */
 @media (max-width: 768px) {
+
+    .block {
+        padding: 0.5em;
+    }
+
     .navbar-header {
         justify-content: flex-start; /* Align everything to the left */
         align-items: center; /* Vertically center h2 and toggle button */
@@ -175,17 +192,17 @@ button:hover {
     .nav-list {
         display: none; /* Hide the nav list on small screens */
         flex-direction: column;
-        align-items: flex-start; /* Align the sidebar items to the left */
+        align-items: center; /* Align the sidebar items to the left */
         position: fixed;
         top: 0;
         left: 0;
         height: 100%;
-        width: 250px;
-        background-color: rgba(65, 128, 67, 0.9);
+        width: 200px;
+        background-color: rgba(65, 128, 67);
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-        padding-top: 3em;
         transition: transform 0.3s ease; /* Smooth transition */
         transform: translateX(-100%); /* Sidebar hidden by default */
+        gap: 1em;
     }
 
     .nav-list.open {
@@ -197,8 +214,14 @@ button:hover {
         display: none;
     }
 
-    .nav-list li {
-        margin: 1em 0;
+    .nav-list button {
+        color: white;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
     }
 
     .nav-list li a {
@@ -217,6 +240,71 @@ button:hover {
         z-index: 2; /* Ensure it's above the sidebar */
         margin: 0;
         padding: 0;
+    }
+
+    /* Increase font size for mobile screens */
+    label, a, textarea, button, .form-input {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    .navbar-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-column h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-column ul li {
+        font-size: 1rem;
+    }
+
+    .data-card h3 {
+        font-size: 1.75rem;
+    }
+
+    .reflection-form-radio-wrapper {
+        font-size: 1rem;
+    }
+
+    .block h2 {
+        font-size: 1.25rem;
+    }
+
+    .block h3 {
+        font-size: 1rem;
+    }
+
+    .activities-subscribe button {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        font-size: 1rem;
+    }
+
+    .subscriptions-view .data-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .back-button {
+        font-size: 1rem;
+    }
+
+    .reflection-form textarea {
+        font-size: 1rem;
     }
 }
 
@@ -372,8 +460,15 @@ button:hover {
     
     @apply
     space-y-4;
+}
+
+@media (max-width: 768px) {
+    .infocard-row {
+        flex-direction: column;
+    }
+
     
-  }
+}
   
   .infocard-details {
     flex: 1;
